@@ -15,6 +15,7 @@ export function Navigation() {
     { label: "About", href: "#about" },
     { label: "Journey", href: "#timeline" },
     { label: "Case Studies", href: "#case-studies" },
+    { label: "Education", href: "#certifications" },
     { label: "Contact", href: "#contact" },
   ]
 

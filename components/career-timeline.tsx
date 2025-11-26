@@ -27,6 +27,15 @@ const timelineEvents = [
     highlights: ["Documentation", "Analytical Skills", "QA Projects", "Staff Training"],
   },
   {
+    year: "2014",
+    title: "Bachelor of Science in Business",
+    organization: "Capella University",
+    description: "Graduated with 4.0 GPA, concentrating in Healthcare Management. Built foundational knowledge in business administration with a focus on healthcare operations.",
+    icon: GraduationCap,
+    type: "education",
+    highlights: ["4.0 GPA", "Healthcare Management", "BS Degree"],
+  },
+  {
     year: "2020",
     title: "Master of Healthcare Administration",
     organization: "Capella University",
