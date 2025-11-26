@@ -16,7 +16,7 @@ export function AboutSection() {
         <ScrollAnimation direction="up" delay={0.2}>
           <div className="space-y-6 text-lg leading-relaxed text-muted-foreground">
             <p>
-              I'm a strategic and results-oriented Healthcare Quality and Patient Safety professional with over 15 years of 
+              I'm a strategic and results-oriented Healthcare Quality and Patient Safety professional with extensive 
               experience driving improvement initiatives in{" "}
               <span className="text-foreground font-medium">inpatient and outpatient settings</span>. My expertise spans{" "}
               <span className="text-foreground font-medium">quality management systems</span>,{" "}

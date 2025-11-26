@@ -11,7 +11,7 @@ const caseStudies = [
     challenge:
       "The health system needed to strengthen safety culture and reduce patient safety incidents across both inpatient and outpatient settings while moving towards zero harm.",
     approach:
-      "Used the organizational incident reporting system to monitor, trend, and support reduction in patient safety incidents. Facilitated adverse health event reviews and root cause analysis to develop meaningful corrective action plans that prevent recurrence.",
+      "Used the organizational incident reporting system to monitor, trend, and support reduction in patient safety incidents. Supported the facilitation of 135 adverse event reviews and root cause analysis to develop meaningful corrective action plans that prevent recurrence.",
     results: [
       { metric: "Incident Trending", value: "Systemwide", icon: TrendingDown },
       { metric: "Duration", value: "4+ years", icon: Clock },
@@ -26,7 +26,7 @@ const caseStudies = [
     challenge:
       "Ensuring accurate and timely submission of government-reported quality measures to maintain compliance with CMS reporting requirements.",
     approach:
-      "Conducted Epic chart abstraction to collect data for government-reported quality measure submission. Assisted in measure development, analysis, and target setting to identify and support opportunities for improvement.",
+      "Conducted Epic chart abstraction to collect data for government-reported Patient Safety Indicators (PSIs) submission. Assisted in measure development, analysis, and target setting to identify and support opportunities for improvement.",
     results: [
       { metric: "Compliance", value: "100%", icon: TrendingDown },
       { metric: "Data Source", value: "Epic EMR", icon: Clock },
