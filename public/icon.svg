@@ -1,0 +1,29 @@
+<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    @media (prefers-color-scheme: light) {
+      .bg { fill: #0d9488; }
+      .shield { fill: white; }
+      .check { stroke: #0d9488; }
+      .heart { fill: #dc2626; }
+    }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #14b8a6; }
+      .shield { fill: #0f172a; }
+      .check { stroke: #14b8a6; }
+      .heart { fill: #ef4444; }
+    }
+  </style>
+  <!-- Rounded square background -->
+  <rect class="bg" width="180" height="180" rx="40"/>
+  
+  <!-- Shield shape - represents protection and patient safety -->
+  <path class="shield" d="M90 24C90 24 40 44 40 78V108C40 138 62 158 90 172C118 158 140 138 140 108V78C140 44 90 24 90 24Z"/>
+  
+  <!-- Heart with checkmark - healthcare quality assurance -->
+  <g transform="translate(90, 95)">
+    <!-- Heart shape -->
+    <path class="heart" d="M0-8C0-8 -22-30 -34-18C-46-6 -46 14 0 42C46 14 46-6 34-18C22-30 0-8 0-8Z" transform="scale(0.9)"/>
+    <!-- Quality checkmark -->
+    <path class="check" d="M-14 4L-4 14L18-10" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+</svg>
