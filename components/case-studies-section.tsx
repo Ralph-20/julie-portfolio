@@ -2,6 +2,8 @@
 
 import { ArrowUpRight, TrendingDown, Clock, Users } from "lucide-react"
 import { ScrollAnimation } from "@/components/scroll-animation"
+import { GlowCard } from "@/components/glow-card"
+import { AnimatedLine } from "@/components/animated-line"
 
 const caseStudies = [
   {
@@ -53,11 +55,11 @@ const caseStudies = [
 
 export function CaseStudiesSection() {
   return (
-    <section className="py-32">
-      <div id="case-studies" className="scroll-mt-20 max-w-6xl mx-auto px-6">
+    <section id="case-studies" className="py-32 scroll-mt-20">
+      <div className="max-w-6xl mx-auto px-6">
         <ScrollAnimation direction="up" delay={0.1}>
           <div className="flex items-center gap-4 mb-12">
-            <div className="w-16 h-px bg-primary" />
+            <AnimatedLine className="w-16" delay={0.2} />
             <h2 className="text-sm font-medium text-primary tracking-widest uppercase">
               Case Studies
             </h2>
@@ -73,73 +75,90 @@ export function CaseStudiesSection() {
         <div className="space-y-12">
           {caseStudies.map((study, index) => (
             <ScrollAnimation key={index} direction="up" delay={0.2 + index * 0.1}>
-              <div className="group relative p-8 rounded-2xl bg-card border border-border hover:border-primary/30 transition-all duration-500">
-                {/* Header */}
-                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-6">
-                  <div>
-                    <h3 className="text-2xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
-                      {study.title}
-                    </h3>
-                    <p className="text-muted-foreground">
-                      {study.organization} • {study.duration}
-                    </p>
-                  </div>
-                  <div className="flex items-center gap-2 text-primary opacity-0 group-hover:opacity-100 transition-opacity">
-                    <span className="text-sm font-medium">View Details</span>
-                    <ArrowUpRight className="w-4 h-4" />
-                  </div>
-                </div>
-
-                {/* Challenge & Approach */}
-                <div className="grid md:grid-cols-2 gap-6 mb-8">
-                  <div>
-                    <h4 className="text-sm font-medium text-primary mb-2 uppercase tracking-wide">
-                      Challenge
-                    </h4>
-                    <p className="text-muted-foreground leading-relaxed">
-                      {study.challenge}
-                    </p>
-                  </div>
-                  <div>
-                    <h4 className="text-sm font-medium text-primary mb-2 uppercase tracking-wide">
-                      Approach
-                    </h4>
-                    <p className="text-muted-foreground leading-relaxed">
-                      {study.approach}
-                    </p>
-                  </div>
-                </div>
-
-                {/* Results */}
-                <div className="grid grid-cols-3 gap-4 mb-6">
-                  {study.results.map((result, resultIndex) => (
-                    <div
-                      key={resultIndex}
-                      className="p-4 rounded-xl bg-secondary/50 border border-border/50"
-                    >
-                      <div className="flex items-center gap-2 mb-2">
-                        <result.icon className="w-4 h-4 text-primary" />
-                        <span className="text-xs text-muted-foreground uppercase tracking-wide">
-                          {result.metric}
-                        </span>
-                      </div>
-                      <p className="text-2xl font-bold text-foreground">{result.value}</p>
+              <GlowCard>
+                <a
+                  href="https://northmemorial.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group block relative p-5 sm:p-8 rounded-2xl bg-card border border-border hover:border-primary/30 transition-all duration-500 cursor-pointer overflow-hidden"
+                >
+                  {/* Animated corner accent */}
+                  <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-bl from-primary/5 via-primary/2 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl" />
+                  
+                  {/* Header */}
+                  <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-6 relative min-w-0">
+                    <div className="min-w-0">
+                      <h3 className="text-xl sm:text-2xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors duration-300 break-words">
+                        {study.title}
+                      </h3>
+                      <p className="text-sm sm:text-base text-muted-foreground">
+                        {study.organization} • {study.duration}
+                      </p>
                     </div>
-                  ))}
-                </div>
+                    <div className="flex items-center gap-2 text-primary opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:translate-x-0 translate-x-2 flex-shrink-0">
+                      <span className="text-sm font-medium">Visit Organization</span>
+                      <ArrowUpRight className="w-4 h-4" />
+                    </div>
+                  </div>
 
-                {/* Tags */}
-                <div className="flex flex-wrap gap-2">
-                  {study.tags.map((tag, tagIndex) => (
-                    <span
-                      key={tagIndex}
-                      className="px-3 py-1 text-xs font-medium text-primary bg-primary/10 rounded-full"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
+                  {/* Challenge & Approach */}
+                  <div className="grid md:grid-cols-2 gap-6 mb-8">
+                    <div className="group/card">
+                      <h4 className="text-sm font-medium text-primary mb-2 uppercase tracking-wide flex items-center gap-2">
+                        <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+                        Challenge
+                      </h4>
+                      <p className="text-muted-foreground leading-relaxed">
+                        {study.challenge}
+                      </p>
+                    </div>
+                    <div className="group/card">
+                      <h4 className="text-sm font-medium text-primary mb-2 uppercase tracking-wide flex items-center gap-2">
+                        <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+                        Approach
+                      </h4>
+                      <p className="text-muted-foreground leading-relaxed">
+                        {study.approach}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Results */}
+                  <div className="grid grid-cols-3 gap-2 sm:gap-4 mb-6">
+                    {study.results.map((result, resultIndex) => (
+                      <div
+                        key={resultIndex}
+                        className="p-3 sm:p-4 rounded-xl bg-secondary/50 border border-border/50 group-hover:border-primary/20 transition-all duration-300 group-hover:bg-secondary/70 min-w-0"
+                        style={{ transitionDelay: `${resultIndex * 50}ms` }}
+                      >
+                        <div className="flex items-center gap-1 sm:gap-2 mb-2">
+                          <result.icon className="w-3 h-3 sm:w-4 sm:h-4 text-primary flex-shrink-0" />
+                          <span className="text-[10px] sm:text-xs text-muted-foreground uppercase tracking-wide break-words">
+                            {result.metric}
+                          </span>
+                        </div>
+                        <p className="text-lg sm:text-2xl font-bold text-foreground break-words">{result.value}</p>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-2">
+                    {study.tags.map((tag, tagIndex) => (
+                      <span
+                        key={tagIndex}
+                        className="px-3 py-1 text-xs font-medium text-primary bg-primary/10 rounded-full group-hover:bg-primary/20 transition-colors duration-300"
+                        style={{ transitionDelay: `${tagIndex * 30}ms` }}
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  
+                  {/* Bottom line animation */}
+                  <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-primary to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-center" />
+                </a>
+              </GlowCard>
             </ScrollAnimation>
           ))}
         </div>

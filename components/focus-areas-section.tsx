@@ -2,6 +2,9 @@
 
 import { Shield, HeartPulse, Microscope } from "lucide-react"
 import { ScrollAnimation } from "@/components/scroll-animation"
+import { GlowCard } from "@/components/glow-card"
+import { MagneticCard } from "@/components/magnetic-card"
+import { AnimatedLine } from "@/components/animated-line"
 
 const focusAreas = [
   {
@@ -26,11 +29,11 @@ const focusAreas = [
 
 export function FocusAreasSection() {
   return (
-    <section className="py-32">
-      <div id="focus" className="scroll-mt-20 max-w-6xl mx-auto px-6">
+    <section id="focus" className="py-32 relative scroll-mt-20">
+      <div className="max-w-6xl mx-auto px-6">
         <ScrollAnimation direction="up" delay={0.1}>
           <div className="flex items-center gap-4 mb-12">
-            <div className="w-16 h-px bg-primary" />
+            <AnimatedLine className="w-16" delay={0.2} />
             <h2 className="text-sm font-medium text-primary tracking-widest uppercase">Focus Areas</h2>
           </div>
         </ScrollAnimation>
@@ -41,14 +44,22 @@ export function FocusAreasSection() {
               key={index}
               direction="up"
               delay={0.2 + index * 0.1}
+              className="h-full"
             >
-              <div className="group p-8 rounded-xl bg-card border border-border hover:border-primary/50 transition-all duration-300">
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
-                  <area.icon className="w-6 h-6 text-primary" />
-                </div>
-                <h3 className="text-xl font-semibold text-foreground mb-3">{area.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{area.description}</p>
-              </div>
+              <MagneticCard intensity={0.2} className="h-full">
+                <GlowCard className="h-full">
+                  <div className="group h-full p-8 rounded-xl bg-card border border-border hover:border-primary/50 transition-all duration-300 relative flex flex-col">
+                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
+                      <area.icon className="w-6 h-6 text-primary" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">{area.title}</h3>
+                    <p className="text-muted-foreground leading-relaxed">{area.description}</p>
+                    
+                    {/* Bottom accent line */}
+                    <div className="absolute bottom-0 left-8 right-8 h-0.5 bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  </div>
+                </GlowCard>
+              </MagneticCard>
             </ScrollAnimation>
           ))}
         </div>
