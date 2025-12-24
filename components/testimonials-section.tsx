@@ -7,6 +7,12 @@ import { Quote, ChevronLeft, ChevronRight, Linkedin } from "lucide-react"
 
 const testimonials = [
   {
+    quote: "Julie brings energy and insight to every team she's part of. During her time in the quality department at North Memorial Health she consistently demonstrated a strong intuition for patient safety concerns and took proactive and reactive steps to address them. Julie's inquisitive nature and eagerness to learn make her a valuable contributor to any organization. She collaborates seamlessly across teams, fostering trust and partnering to drive results. Anyone looking for a dedicated, thoughtful, and collaborative team member would be fortunate to work with Julie.",
+    author: "Linnea Huinker",
+    role: "Director of Quality at North Memorial Health",
+    date: "December 2025",
+  },
+  {
     quote: "Julie's excellent customer service skills aided in supporting our customers and assisting with efficiently fulfilling their needs. Julie was an asset to the team as a whole as she worked closely with the field technicians and customers to remedy an and all issues proficiently. I would gladly work with Julie again.",
     author: "Jim Coffey",
     role: "Senior Messaging\\Collaboration\\Security\\Active Directory Engineer",
